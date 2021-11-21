@@ -1,0 +1,15 @@
+scrapy shell https://www.fake-plants.co.uk
+
+response.css('li.product-category a::attr(href)').get()
+
+response.css('div.astra-shop-summary-wrap').get()
+
+products = response.css('div.astra-shop-summary-wrap')
+
+product.css('span.ast-woo-product-category::text').get().strip()
+
+product.css('h2.woocommerce-loop-product__title::text').get()
+
+product.css('bdi::text').get() ## Non-existent - used for price. 
+
+scrapy crawl plants -o plants.csv
